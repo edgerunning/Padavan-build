@@ -45,7 +45,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        MHZ: 960               # CPU超频频率 必须为20的倍数。开启超频请修改86行超频选项
+        MHZ: 940            # CPU超频频率 必须为20的倍数。开启超频请修改86行超频选项
         TNAME: RM2100
         KERNEL: 3.4
       run: |
@@ -65,11 +65,11 @@ jobs:
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d'.config       #删除配置项SMBD36
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config       #删除配置项SMBD36
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNS_SSL/d' .config     #删除配置项DDNS_SSL
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTTPS/d' .config        #删除配置项HTTPS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config      #删除配置项OPENVPN
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW/d'.config   #删除配置项FFMPEG_NEW
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW/d' .config   #删除配置项FFMPEG_NEW
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config       #删除配置项XUPNPD
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config       #删除配置项DOGCOM
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config         #删除配置项NANO
@@ -95,7 +95,7 @@ jobs:
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
-        echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> configs/templates/$TNAME.config           #开启超频，仅MT7621可用
+        echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> .config           #开启超频，仅MT7621可用
         if [ $KERNEL = "4.4" ] ; then
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
