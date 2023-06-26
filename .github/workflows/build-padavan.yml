@@ -103,7 +103,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
-        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
+        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=y" >> .config #可以不集成
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件  ~4.5M
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config #ddnsto  ~0.5M
@@ -113,12 +113,12 @@ jobs:
         else
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> .config       #使用SMBD36新版本
         echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=n" >> .config     #删除DDNS_SSL
-        echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=n" >> .config        #删除HTTPS
+        echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> .config        #删除HTTPS
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> .config      #删除OPENVPN
         echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> .config   #使用FFMPEG新版本
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> .config       #删除用于IPTV的XUPNPD
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config       #删除用于Drcom的工具DOGCOM
-        echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config         #删除工具NANO
+        echo "CONFIG_FIRMWARE_INCLUDE_NANO=y" >> .config         #删除工具NANO
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config     #QOS
         echo "CONFIG_FIRMWARE_INCLUDE_TCPDUMP=n" >> .config      #删除TCPDUMP
         echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=y" >> .config     #删除EAP_PEAP
@@ -136,9 +136,9 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> .config #smartdns二进制文件
-        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件  ~4.5M
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
-        echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
+        echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤
         echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
         echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
