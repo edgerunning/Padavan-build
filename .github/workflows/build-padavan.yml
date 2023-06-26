@@ -50,12 +50,12 @@ jobs:
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
-        echo "CPU超频到$MHZ"mhz
-        echo "修改CPU频率"
-        clock=`echo "obase=16 ; ibase=10 ; (((($MHZ/20)-1)*16+2))" | bc`
-        echo "16进制$clock"
-        sed -i "554,555s:0xff:0x7ff:g" /opt/rt-n56u/trunk/linux-3.4.x/arch/mips/rt2880/init.c
-        sed -i "554,556s:0xc2:0x$clock:g" /opt/rt-n56u/trunk/linux-3.4.x/arch/mips/rt2880/init.c
+        #echo "CPU超频到$MHZ"mhz
+        #echo "修改CPU频率"
+        #clock=`echo "obase=16 ; ibase=10 ; (((($MHZ/20)-1)*16+2))" | bc`
+        #echo "16进制$clock"
+        #sed -i "554,555s:0xff:0x7ff:g" /opt/rt-n56u/trunk/linux-3.4.x/arch/mips/rt2880/init.c
+        #sed -i "554,556s:0xc2:0x$clock:g" /opt/rt-n56u/trunk/linux-3.4.x/arch/mips/rt2880/init.c
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
@@ -95,7 +95,7 @@ jobs:
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
-        echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> .config           #开启超频，仅MT7621可用
+        echo "CONFIG_FIRMWARE_CPU_900MHZ=n" >> .config           #开启超频，仅MT7621可用
         if [ $KERNEL = "4.4" ] ; then
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
