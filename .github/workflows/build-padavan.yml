@@ -111,18 +111,18 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
         else
-        echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> .config       #使用SMBD36新版本
+        echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=n" >> .config       #使用SMBD36新版本
         echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=n" >> .config     #删除DDNS_SSL
         echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> .config        #删除HTTPS
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> .config      #删除OPENVPN
-        echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> .config   #使用FFMPEG新版本
+        echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n" >> .config   #使用FFMPEG新版本
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> .config       #删除用于IPTV的XUPNPD
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config       #删除用于Drcom的工具DOGCOM
-        echo "CONFIG_FIRMWARE_INCLUDE_NANO=y" >> .config         #删除工具NANO
-        echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config     #QOS
+        echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config         #删除工具NANO
+        echo "CONFIG_FIRMWARE_INCLUDE_QOS=n" >> .config     #QOS
         echo "CONFIG_FIRMWARE_INCLUDE_TCPDUMP=n" >> .config      #删除TCPDUMP
-        echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=y" >> .config     #删除EAP_PEAP
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y" >> .config   #删除OPENSSL_EC
+        echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config     #删除EAP_PEAP
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=n" >> .config   #删除OPENSSL_EC
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #SS plus+
@@ -147,7 +147,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
         echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
-        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config
         fi
         #########################################################################################
