@@ -122,7 +122,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=n" >> .config     #QOS
         echo "CONFIG_FIRMWARE_INCLUDE_TCPDUMP=n" >> .config      #删除TCPDUMP
         echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config     #删除EAP_PEAP
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=n" >> .config   #删除OPENSSL_EC
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y" >> .config   #删除OPENSSL_EC
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #SS plus+
